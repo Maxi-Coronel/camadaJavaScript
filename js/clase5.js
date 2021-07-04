@@ -11,7 +11,7 @@ console.log(Yo); */
 let cred = Number(prompt(`ingrese el monto de dinero que desea para el credito`));
 let cantidad = Number(prompt(`ingrese la cantidad de cuotas que desesa`));
 
-class persona {
+class Persona {
     constructor(nombre, apellido, edad, ojos, credito){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -36,7 +36,7 @@ class persona {
     }
 }
 
-const Cliente = new persona(`maxi`, `coronel`, 28, `marron`, cred);
+const Cliente = new Persona(`maxi`, `coronel`, 28, `marron`, cred);
 
 console.log(Cliente);
 console.log(`El credito es de $${Cliente.credito}`);
