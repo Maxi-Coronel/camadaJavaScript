@@ -19,7 +19,7 @@ let suma = (a, b) => a + b;
 let multi = (a, b) => a * b;
 
 //objetos
-class sofa{
+class Sofa{
     constructor(nombre, modulacion, tela, metraje, precio){
         this.nombre = nombre;
         this.modulacion = modulacion;
@@ -56,6 +56,6 @@ switch (mod) {
         break;
 }
 
-const misana = new sofa(`misana`, mod, tel, met, pre);
+const misana = new Sofa(`misana`, mod, tel, met, pre);
 
 console.log(misana);
