@@ -12,48 +12,96 @@
 </head>
 <body>
     <header>
-        <nav></nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button type="button" class="btn btn-primary position-relative margin-left">
+                    Inbox
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      99+
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
         <h2>JAVASCRIPT</h2>
 
-        <form action="">
-            <fieldset>
-                <legend>Publicar</legend>
-                <label for="titulo">Título
-                    <input type="text" name="titulo" id="titulo">
-                </label>
-                <br>
-                <label for="descripcion">Descripción
-                    <textarea name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
-                </label>
-                <br>
-                <label for="precio">Precio
-                    <input type="number" name="precio" id="precio">
-                </label>
-                <br>
-                <label for="stock">Cant Stock
-                    <input type="number" name="stock" id="stock">
-                </label>
-            </fieldset>
-            <input type="button" value="Subir" id="button">
-        </form>
-        <section id="Productos">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body" id="tarjeta">
-                
-                </div>
+        <form class="row g-3">
+            <div class="col-md-6">
+              <label for="titulo" class="form-label">Título</label>
+              <input type="text" class="form-control" id="titulo">
             </div>
-        </section>
+            <div class="col-md-6">
+              <label for="vendedor" class="form-label">Vendedor</label>
+              <input type="text" class="form-control" id="stock">
+            </div>
+            <div class="col-12">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="descripcion">
+            </div>
+            <div class="col-6">
+              <label for="imagen" class="form-label">Imagen</label>
+              <input type="file" class="form-control" id="imagen">
+            </div>
+            <div class="col-md-4">
+              <label for="estado" class="form-label">Estado</label>
+              <select id="estado" class="form-select">
+                <option selected>Nuevo</option>
+                <option>Usado</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="precio" class="form-label">Precio</label>
+              <input type="number" class="form-control" id="precio">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <input type="button" class="btn btn-primary" value="Subir" id="button">
+            </div>
+          </form>
 
-        <div class="card" style="width: 18rem;">
-            <img src="./multimedia/javascript-logo-escudo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+          <!-- Productos -->
+        <section class="margin d-flex" id="prod"></section>
         
     </main>
     <footer></footer>

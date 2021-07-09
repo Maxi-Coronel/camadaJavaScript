@@ -1,50 +1,90 @@
-let sum = 0;
+const productos = [];
 const carrito = [];
 
-let descripcion = document.getElementById("descripcion").value;
-let precio = document.getElementById("precio").value;
-let stock = document.getElementById("stock").value;
-
-const button = document.getElementById("button");
-button.addEventListener(`click`, dibujarProducto);
-
-function dibujarProducto() {
-    
-    let titulo = document.getElementById("titulo").value;
-    let tarjeta = document.getElementById("tarjeta");
-
-    let h5 = document.createElement("h5");
-    h5.textContent = `${titulo}`
-    h5.setAttribute(`class`,"card-title");
-    tarjeta.appendChild(h5);
-
-    //tarjeta.innerHTML = `<h5>${titulo}</h5>`;
-/* 
-    let h5 = document.createElement("h5");
-    h5.textContent = titulo;
-    tarjeta.appendChild(h5); */
-    
-};
-
-    /*{ <div class="card" style="width: 18rem;">
-        <img src="" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div> }*/
-
-
-/* class Productos{
-    constructor(id, titulo, descripcion, precio, stock){
-        this.id = id;
+class Producto{
+    constructor(titulo, descripcion, precio, stock){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.stock = stock
+        this.stock = stock;
     }
 }
+
+const button = document.getElementById("button");
+button.addEventListener(`click`, completa);
+
+const btnCompra = document.getElementById("comprar");
+button.addEventListener(`click`, agregarCarrito);
+
+function agregarCarrito() {
+    
+}
+
+function agregarProducto() {
+
+    for (const iterator of object) {
+        
+    }
+
+    let titulo = document.getElementById("titulo").value;
+    let descripcion = document.getElementById("descripcion").value;
+    let precio = document.getElementById("precio").value;
+    let stock = document.getElementById("stock").value;
+    
+    let producto = new Producto(titulo, descripcion, precio, stock);
+
+    productos.push(producto);
+}
+
+function dibujarProducto() {
+
+    let titulo = document.getElementById("titulo").value;
+    let descripcion = document.getElementById("descripcion").value;
+    let precio = document.getElementById("precio").value;
+    let stock = document.getElementById("stock").value;
+        
+    let prod = document.getElementById("prod");
+
+    let div1 = document.createElement("div");
+    div1.setAttribute(`class`,"card");    
+    div1.setAttribute(`style`,"width: 18rem;");
+    prod.appendChild(div1);
+
+    let div2 = document.createElement(`div`);
+    div2.setAttribute(`class`,"card-body");
+    div1.appendChild(div2);
+
+    let h5 = document.createElement("h5");
+    h5.textContent = `${titulo}`;
+    h5.setAttribute(`class`,"card-title");
+    div2.appendChild(h5);
+
+    let parrafo = document.createElement(`p`);
+    parrafo.textContent = `${descripcion}`;
+    parrafo.setAttribute(`class`,"card-text");
+    div2.appendChild(parrafo);
+    
+    let h6 = document.createElement("h6");
+    h6.textContent = `$ ${precio}`;
+    h6.setAttribute(`class`,"card-title");
+    div2.appendChild(h6);
+
+    let comprar = document.createElement("input");
+    comprar.setAttribute(`type`,"button");
+    comprar.setAttribute(`class`,"btn-primary btn");
+    comprar.setAttribute(`value`,"comprar");
+    div2.appendChild(comprar);
+
+};
+
+function completa() {
+    agregarProducto();
+    dibujarProducto();
+}
+
+console.log(productos);
+
+/* 
 
 function agregarProductos() {
     let cantProducto = Number(prompt(`cuantos productos quieres agregar?`));
@@ -53,7 +93,6 @@ function agregarProductos() {
         let descripcion = prompt(`Dime una descripcion de tu producto`);
         let precio = Number(prompt(`Dime el precio de tu producto`));
         let stock = Number(prompt(`Dime la cantidad que quieres vender`));
-        let producto = new Productos(i, titulo, descripcion, precio, stock);
         console.log(producto);
         carrito.push(producto);
     }
@@ -142,3 +181,10 @@ function dibujarProducto() {
  */
 
 //boton.addEvListener ?????
+
+
+
+/* function saveLocal(){
+    let aJson = JSON.stringify(Productos);
+    localStorage.setItem("productos",aJson)
+} */
