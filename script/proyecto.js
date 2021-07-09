@@ -2,11 +2,12 @@ const productos = [];
 const carrito = [];
 
 class Producto{
-    constructor(titulo, descripcion, precio, stock){
+    constructor(titulo, descripcion, precio, stock, estado){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
+        this.estado = estado;
     }
 }
 
@@ -16,22 +17,21 @@ button.addEventListener(`click`, completa);
 const btnCompra = document.getElementById("comprar");
 button.addEventListener(`click`, agregarCarrito);
 
+let cantCarrito = document.getElementById("n-carrito");
+cantCarrito.textContent = `${carrito.length}`;
+
 function agregarCarrito() {
-    
 }
 
 function agregarProducto() {
 
-    for (const iterator of object) {
-        
-    }
-
     let titulo = document.getElementById("titulo").value;
     let descripcion = document.getElementById("descripcion").value;
     let precio = document.getElementById("precio").value;
-    let stock = document.getElementById("stock").value;
+    let stock = document.getElementById("stock").value;    
+    let estado = document.getElementById("estado").value;
     
-    let producto = new Producto(titulo, descripcion, precio, stock);
+    let producto = new Producto(titulo, descripcion, precio, stock, estado);
 
     productos.push(producto);
 }

@@ -14,14 +14,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#">Aqui de todo!!</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -46,9 +46,8 @@
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <button type="button" class="btn btn-primary position-relative margin-left">
-                    Inbox
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      99+
+                    Carrito
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="n-carrito">
                       <span class="visually-hidden">unread messages</span>
                     </span>
                   </button>
@@ -65,17 +64,17 @@
               <input type="text" class="form-control" id="titulo">
             </div>
             <div class="col-md-6">
-              <label for="vendedor" class="form-label">Vendedor</label>
-              <input type="text" class="form-control" id="stock">
+              <label for="stock" class="form-label">Cantidad de Stock</label>
+              <input type="number" class="form-control" id="stock">
             </div>
             <div class="col-12">
               <label for="descripcion" class="form-label">Descripción</label>
               <input type="text" class="form-control" id="descripcion">
             </div>
-            <div class="col-6">
+            <!-- <div class="col-6">
               <label for="imagen" class="form-label">Imagen</label>
               <input type="file" class="form-control" id="imagen">
-            </div>
+            </div> -->
             <div class="col-md-4">
               <label for="estado" class="form-label">Estado</label>
               <select id="estado" class="form-select">
