@@ -1,6 +1,5 @@
 // ===================        Array        ===================
 const productos = [];
-const carrito = [];
 
 // ===================       Const       ===================
 const button = document.getElementById("button");
@@ -9,35 +8,36 @@ const cantCarrito = document.getElementById("n-carrito");
 
 // ===================       Eventos       ===================
 button.addEventListener(`click`, agregarProducto);
-button.addEventListener(`click`, agregarCarrito);
-cantCarrito.textContent = `${carrito.length}`;
 
 // ===================  Clase constructora  ===================
 class Producto{
-    constructor(titulo, descripcion, precio, stock, estado){
+    constructor(titulo, estado, precio, stock, formato){
         this.titulo = titulo;
-        this.descripcion = descripcion;
+        this.estado = estado;
         this.precio = precio;
         this.stock = stock;
-        this.estado = estado;
+        this.formato = formato;
     }
 }
 
 // ===================       Funciones       ===================
-function agregarCarrito() {
-}
 
 function agregarProducto() {
+    const deJson = localStorage.getItem("productos")
+    const productos = JSON.parse(deJson)
 
     let titulo = document.getElementById("titulo").value;
-    let descripcion = document.getElementById("descripcion").value;
+    let estado = document.getElementById("estado").value;
     let precio = document.getElementById("precio").value;
     let stock = document.getElementById("stock").value;
-    let estado = document.getElementById("estado").value;
+    let formato = document.getElementById("formato").value;
     
-    let producto = new Producto(titulo, descripcion, precio, stock, estado);
+    let producto = new Producto(titulo, estado, precio, stock, formato);
 
     productos.push(producto);
+    
+    let aJson = JSON.stringify(productos);
+    localStorage.setItem("productos",aJson);
 }
 
 function dibujarProducto() {
@@ -79,48 +79,6 @@ function dibujarProducto() {
     div2.appendChild(comprar);
 
 };
-
-function dibujarArray() {
-
-    productos.forEach(e => {        
-        let prod = document.getElementById("prod");
-
-        let div1 = document.createElement("div");
-        div1.setAttribute(`class`,"card");    
-        div1.setAttribute(`style`,"width: 18rem;");
-        prod.appendChild(div1);
-
-        let div2 = document.createElement(`div`);
-        div2.setAttribute(`class`,"card-body");
-        div1.appendChild(div2);
-
-        let h5 = document.createElement("h5");
-        h5.textContent = `${e.titulo}`;
-        h5.setAttribute(`class`,"card-title");
-        div2.appendChild(h5);
-
-        let parrafo = document.createElement(`p`);
-        parrafo.textContent = `${e.descripcion}`;
-        parrafo.setAttribute(`class`,"card-text");
-        div2.appendChild(parrafo);
-        
-        let h6 = document.createElement("h6");
-        h6.textContent = `$ ${e.precio}`;
-        h6.setAttribute(`class`,"card-title");
-        div2.appendChild(h6);
-
-        let comprar = document.createElement("input");
-        comprar.setAttribute(`type`,"button");
-        comprar.setAttribute(`class`,"btn-primary btn");
-        comprar.setAttribute(`value`,"comprar");
-        div2.appendChild(comprar);
-    });
-};
-
-function saveLocal(){
-    let aJson = JSON.stringify(Productos);
-    localStorage.setItem("productos",aJson)
-}
 
 /* 
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+    <title>Document</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -21,12 +21,37 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="./html/vender.html">Vender</a>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li>
+                    <form>
+                      <div class="d-flex">
+                        <div class="col-md-6 me-2">
+                            <select id="categoria" class="form-select">
+                              <option selected>Formato</option>
+                              <option>Físicos</option>
+                              <option>Digitales</option>
+                            </select>  
+                        </div>
+                        <div class="col-md-6 me-2">
+                            <select id="consolas" class="form-select">
+                              <option selected>Consolas</option>
+                              <option>PS3</option>
+                              <option>PS4</option>
+                              <option>PS5</option>
+                              <option>XBOX 360</option>
+                              <option>XBOX ONE</option>
+                              <option>XBOX serie X|S</option>
+                            </select>
+                        </div>
+                        <input class="btn btn-outline-success" type="button" value="Buscar" id="buscar">
+                      </div>
+                    </form>
+                  </li>
+                  <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Dropdown
                     </a>
@@ -39,71 +64,30 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
+                  </li> -->
                 </ul>
-                <form class="d-flex">
+                
+                <!-- <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
                 <button type="button" class="btn btn-primary position-relative margin-left">
-                    Carrito
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="n-carrito">
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                  </button>
+                  <a class="btn-primary" href="./carrito.html">Carrito</a>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="n-carrito">
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
               </div>
             </div>
           </nav>
     </header>
-    <main>
-        <h2>JAVASCRIPT</h2>
-
-        <form class="row g-3">
-            <div class="col-md-6">
-              <label for="titulo" class="form-label">Título</label>
-              <input type="text" class="form-control" id="titulo">
-            </div>
-            <div class="col-md-6">
-              <label for="stock" class="form-label">Cantidad de Stock</label>
-              <input type="number" class="form-control" id="stock">
-            </div>
-            <div class="col-12">
-              <label for="descripcion" class="form-label">Descripción</label>
-              <input type="text" class="form-control" id="descripcion">
-            </div>
-            <!-- <div class="col-6">
-              <label for="imagen" class="form-label">Imagen</label>
-              <input type="file" class="form-control" id="imagen">
-            </div> -->
-            <div class="col-md-4">
-              <label for="estado" class="form-label">Estado</label>
-              <select id="estado" class="form-select">
-                <option selected>Nuevo</option>
-                <option>Usado</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="precio" class="form-label">Precio</label>
-              <input type="number" class="form-control" id="precio">
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <input type="button" class="btn btn-primary" value="Subir" id="button">
-            </div>
-          </form>
-
+    <main>        
           <!-- Productos -->
-        <section class="margin d-flex" id="prod"></section>
-        
+          <section class="margin d-flex" id="prod"></section>
     </main>
-    <footer></footer>
-    <script src="./script/proyecto.js"></script>
+    
+    <script src="./script/productos.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
