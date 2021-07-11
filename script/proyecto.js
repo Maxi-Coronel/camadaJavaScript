@@ -21,11 +21,10 @@ class Producto{
     }
 }
 
+// ===================  Agregando Producto  ===================
 const producto = new Producto("Call of duty", "Nuevo", 1500, 1, "Físico", "PS4");
 
 productos.push(producto);
-
-console.log(productos);
 
 let aJson = JSON.stringify(productos);
 localStorage.setItem("productos",aJson);
@@ -106,7 +105,6 @@ function dibujarProducto() {
 };
 
 /* 
-
 function ordenarElCarrito() {
     let orden = prompt(`Dime cual es el orden que quieres darle al carrito "nombre" o "precio"`);
     switch (orden) {
@@ -129,5 +127,4 @@ function sumarPrecioCarrito() {
         return sum
     }
 }
-
  */
