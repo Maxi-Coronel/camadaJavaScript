@@ -5,7 +5,7 @@ const productos = JSON.parse(deJson)
 // ===================  Funciones  ===================
 function dibujarArray() {
 
-    productos.forEach(e => {        
+    productos.forEach(e => {    
         let prod = document.getElementById("prod");
 
         let div1 = document.createElement("div");
@@ -22,10 +22,20 @@ function dibujarArray() {
         h5.setAttribute(`class`,"card-title");
         div2.appendChild(h5);
 
-        let parrafo = document.createElement(`p`);
-        parrafo.textContent = `${e.descripcion}`;
-        parrafo.setAttribute(`class`,"card-text");
-        div2.appendChild(parrafo);
+        let form = document.createElement(`p`);
+        form.textContent = `${e.formato}`;
+        form.setAttribute(`class`,"card-text");
+        div2.appendChild(form);
+
+        let est = document.createElement(`p`);
+        est.textContent = `${e.estado}`;
+        est.setAttribute(`class`,"card-text");
+        div2.appendChild(est);
+
+        let cons = document.createElement(`p`);
+        cons.textContent = `${e.consola}`;
+        cons.setAttribute(`class`,"card-text");
+        div2.appendChild(cons);
         
         let h6 = document.createElement("h6");
         h6.textContent = `$ ${e.precio}`;
@@ -40,10 +50,4 @@ function dibujarArray() {
     });
 };
 
-function filtrar() {
-    let categoria 
-}
-
 dibujarArray();
-
-console.log(productos);

@@ -11,18 +11,29 @@ button.addEventListener(`click`, agregarProducto);
 
 // ===================  Clase constructora  ===================
 class Producto{
-    constructor(titulo, estado, precio, stock, formato){
+    constructor(titulo, estado, precio, stock, formato, consola){
         this.titulo = titulo;
         this.estado = estado;
         this.precio = precio;
         this.stock = stock;
         this.formato = formato;
+        this.consola = consola;
     }
 }
+
+const producto = new Producto("Call of duty", "Nuevo", 1500, 1, "Físico", "PS4");
+
+productos.push(producto);
+
+console.log(productos);
+
+let aJson = JSON.stringify(productos);
+localStorage.setItem("productos",aJson);
 
 // ===================       Funciones       ===================
 
 function agregarProducto() {
+
     const deJson = localStorage.getItem("productos")
     const productos = JSON.parse(deJson)
 
@@ -31,11 +42,12 @@ function agregarProducto() {
     let precio = document.getElementById("precio").value;
     let stock = document.getElementById("stock").value;
     let formato = document.getElementById("formato").value;
+    let consola = document.getElementById("consola").value;
     
-    let producto = new Producto(titulo, estado, precio, stock, formato);
-
+    let producto = new Producto(titulo, estado, precio, stock, formato, consola);
+    
     productos.push(producto);
-    
+
     let aJson = JSON.stringify(productos);
     localStorage.setItem("productos",aJson);
 }
@@ -43,8 +55,11 @@ function agregarProducto() {
 function dibujarProducto() {
 
     let titulo = document.getElementById("titulo").value;
-    let descripcion = document.getElementById("descripcion").value;
+    let estado = document.getElementById("estado").value;
     let precio = document.getElementById("precio").value;
+    let stock = document.getElementById("stock").value;
+    let formato = document.getElementById("formato").value;
+    let consola = document.getElementById("consola").value;
         
     let prod = document.getElementById("prod");
 
@@ -62,10 +77,20 @@ function dibujarProducto() {
     h5.setAttribute(`class`,"card-title");
     div2.appendChild(h5);
 
-    let parrafo = document.createElement(`p`);
-    parrafo.textContent = `${descripcion}`;
-    parrafo.setAttribute(`class`,"card-text");
-    div2.appendChild(parrafo);
+    let form = document.createElement(`p`);
+    form.textContent = `${formato}`;
+    form.setAttribute(`class`,"card-text");
+    div2.appendChild(form);
+
+    let est = document.createElement(`p`);
+    est.textContent = `${estado}`;
+    est.setAttribute(`class`,"card-text");
+    div2.appendChild(est);
+
+    let cons = document.createElement(`p`);
+    cons.textContent = `${consola}`;
+    cons.setAttribute(`class`,"card-text");
+    div2.appendChild(cons);
     
     let h6 = document.createElement("h6");
     h6.textContent = `$ ${precio}`;
