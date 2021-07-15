@@ -11,7 +11,8 @@ button.addEventListener(`click`, agregarProducto);
 
 // ===================  Clase constructora  ===================
 class Producto{
-    constructor(titulo, estado, precio, stock, formato, consola){
+    constructor(id,titulo, estado, precio, stock, formato, consola){
+        this.id = id;
         this.titulo = titulo;
         this.estado = estado;
         this.precio = precio;
@@ -22,9 +23,17 @@ class Producto{
 }
 
 // ===================  Agregando Producto  ===================
-const producto = new Producto("Call of duty", "Nuevo", 1500, 1, "Físico", "PS4");
+const producto = new Producto(1, "Call of duty", "Nuevo", 3500, 1, "Físico", "PS4");
+const producto1 = new Producto(2, "God of war", "Usado", 1500, 1, "Físico", "PS3");
+const producto2 = new Producto(3, "God of war", "Usado", 1500, 1, "Físico", "PS3");
+const producto3 = new Producto(4, "God of war", "Usado", 1500, 1, "Físico", "PS3");
+const producto4 = new Producto(5, "God of war", "Usado", 1500, 1, "Físico", "PS3");
 
 productos.push(producto);
+productos.push(producto1);
+productos.push(producto2);
+productos.push(producto3);
+productos.push(producto4);
 
 let aJson = JSON.stringify(productos);
 localStorage.setItem("productos",aJson);
@@ -36,6 +45,7 @@ function agregarProducto() {
     const deJson = localStorage.getItem("productos")
     const productos = JSON.parse(deJson)
 
+    let id = productos.length+1;
     let titulo = document.getElementById("titulo").value;
     let estado = document.getElementById("estado").value;
     let precio = document.getElementById("precio").value;
@@ -43,7 +53,7 @@ function agregarProducto() {
     let formato = document.getElementById("formato").value;
     let consola = document.getElementById("consola").value;
     
-    let producto = new Producto(titulo, estado, precio, stock, formato, consola);
+    let producto = new Producto(id, titulo, estado, precio, stock, formato, consola);
     
     productos.push(producto);
 
@@ -51,6 +61,7 @@ function agregarProducto() {
     localStorage.setItem("productos",aJson);
 }
 
+// ===================       No se usa       ===================
 function dibujarProducto() {
 
     let titulo = document.getElementById("titulo").value;

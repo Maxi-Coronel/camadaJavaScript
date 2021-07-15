@@ -1,8 +1,35 @@
-// ===================  Productos  ===================
+//entidades/objetos-----------------------
+//variables-------------------------------
+//---arrays--------------------
+//---selectores----------------
+//funciones-------------------------------
+//eventos---------------------------------
+//logica----------------------------------
+
+//id = Math.random()????
+//buscar el ultimo numero y agregar 1
+//find filtra un elemento
+//filter filtra un objeto
+
+
+
+
+
+
+
+// ===================        Array         ===================
+const carrito = []
+
+// ===================        Const         ===================
+
+// ===================  Traer localStorage  ===================
 const deJson = localStorage.getItem("productos")
 const productos = JSON.parse(deJson)
 
-// ===================  Funciones  ===================
+// ===================        Eventos        ===================
+//compra.addEventListener(`click`, agregarProducto);
+
+// ===================       Funciones       ===================
 function dibujarArray() {
 
     productos.forEach(e => {    
@@ -46,6 +73,7 @@ function dibujarArray() {
         comprar.setAttribute(`type`,"button");
         comprar.setAttribute(`class`,"btn-primary btn");
         comprar.setAttribute(`value`,"comprar");
+        comprar.setAttribute(`id`,`${e.id}`);
         div2.appendChild(comprar);
     });
 };
